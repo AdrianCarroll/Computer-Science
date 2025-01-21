@@ -26,5 +26,11 @@ y= str(123)
 print (x, y)
 x= "Hello" + "World"
 y= len(x)
-print (y, x)"""
+print (y, x)
 
+x= "hello" + \
+   "to Python" + \
+   "world"
+for char in x:
+    y = char
+    print (y, ':', end=' ')"""
