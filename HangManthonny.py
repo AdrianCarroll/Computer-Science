@@ -75,11 +75,14 @@ while "yes" in again:
                     indexPos = secret.find(go)
                     attempt = attempt[0:indexPos]+go+attempt[indexPos+1:]
                     print(attempt)
-    #        else:
-    #            attempt = attempt[start:index+oldIndex]+go+attempt[index+1+oldIndex:]
-    #            oldIndex = oldIndex +index+1
-    #            x_tmp = x_tmp[index+1:]
-    #            index = x_tmp.find(go)
+                else:
+                    oldIndex = 0
+                    start = 0            
+                    for i in range(counter):
+                        y = y[start:index+oldIndex]+l+y[index+1+oldIndex:]
+                        oldIndex = oldIndex +index+1
+                        x_tmp = x_tmp[index+1:]
+                        index = x_tmp.find(l)
             else:
                 print("Wrong guess!")
                 lives=lives-1
@@ -95,7 +98,7 @@ while "yes" in again:
                    print(string3)
                 elif lives==1:
                    print(string2)
-                else lives==0:
+                else:
                    print(string1)
                    print("Game over")
             if attempt==secret:
