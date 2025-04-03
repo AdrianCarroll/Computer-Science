@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <title>Country Survey</title>
@@ -22,17 +23,36 @@
             <lable for="FavCountry">Favourite Country:</lable>
             <input type="text" id="FavCountry">
     </fieldset>
+    <script>
+        let formID = document.getElementById("usersubmission")
+        formID.addEventListener("submit", usersubmission)
+        function usersubmission(event) {
+            event.preventDefault()
+            let userName = document.getElementById("Name")
+            console.log(userName.value)
+            let userAge = document.getElementById("Age")
+            console.log(userAge.value)
+            let userCount = document.getElementById("Country")
+            console.log(userCount.value)
+            let userFavCount = document.getElementById("FavCountry")
+            console.log(userFavCount.value)
+            let userrad = document.querySelector('input[name="rad"]:checked')
+            console.log(userrad.value)
+        }
+    </script>
     <fieldset>
         <legend>Have you been to the country we advertize?</legend>
         <lable for="radio">Yes</lable>
-            <input type="radio" name="rad" value="Yes">
-            <br>
-            <lable for="radio">No</lable>
-            <input type="radio" name="rad" value="No">
+        <input type="radio" name="rad" value="Yes">
+        <br>
+        <lable for="radio">No</lable>
+        <input type="radio" name="rad" value="No">
     </fieldset>
     <br>
     <lable for="yes">Tick this box to start receiving our newsletter</lable>
-        <input type="checkbox">
+    <input type="checkbox">
     <br>
     <input type="submit" value="submit" />
 </body>
+
+</html>
